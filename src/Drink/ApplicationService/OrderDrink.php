@@ -26,7 +26,12 @@ final class OrderDrink
             $drink->drinkType()
         );
 
-        return 'You have ordered a ' . $drink->drinkType()->type() . $drink->sugar()->stickMessage() . $drink->extraHot(
-            )->extraHotMsg();
+        return $this->orderDrinkMsg($drink->drinkType()->type(), $drink->sugar()->stickMessage(), $drink->extraHot(
+            )->extraHotMsg());
+    }
+
+    private function orderDrinkMsg (string $drinkType, string $sugarMsg, string $extraHotMsg): string
+    {
+        return 'You have ordered a ' . $drinkType . $extraHotMsg . $sugarMsg;
     }
 }
