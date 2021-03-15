@@ -26,6 +26,7 @@ final class OrderDrink
             $drink->drinkType()
         );
 
-        return 'You have ordered a ' . $drink->drinkType()->type() .  $drink->sugar()->stickMessage() . $drink->extraHot()->extraHotMsg();
+        return 'You have ordered a ' . $drink->drinkType()->type() . $drink->sugar()->stickMessage() . $drink->extraHot(
+            )->extraHotMsg();
     }
 }

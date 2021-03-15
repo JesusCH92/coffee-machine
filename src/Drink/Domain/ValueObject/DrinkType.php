@@ -8,8 +8,8 @@ use GetWith\CoffeeMachine\Drink\Domain\Exception\DrinkTypeInvalid;
 
 final class DrinkType
 {
-    public const COFFEE = 'coffee';
-    public const TEA = 'tea';
+    public const COFFEE    = 'coffee';
+    public const TEA       = 'tea';
     public const CHOCOLATE = 'chocolate';
 
     public static $allowedValues = [
@@ -26,15 +26,15 @@ final class DrinkType
         $this->type = strtolower($type);
     }
 
-    public function type(): string
-    {
-        return $this->type;
-    }
-
     private function guardIsAllowed(string $type): void
     {
         if (!in_array($type, static::$allowedValues, true)) {
             throw new DrinkTypeInvalid($type);
         }
+    }
+
+    public function type(): string
+    {
+        return $this->type;
     }
 }

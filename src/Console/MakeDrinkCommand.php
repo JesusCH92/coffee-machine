@@ -2,8 +2,8 @@
 
 namespace GetWith\CoffeeMachine\Console;
 
-use GetWith\CoffeeMachine\Drink\ApplicationService\OrderDrink;
 use GetWith\CoffeeMachine\Drink\ApplicationService\DTO\OrderDrinkRequest;
+use GetWith\CoffeeMachine\Drink\ApplicationService\OrderDrink;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

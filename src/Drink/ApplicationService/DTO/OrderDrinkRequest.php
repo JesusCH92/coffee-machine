@@ -16,12 +16,11 @@ final class OrderDrinkRequest
         float $money,
         int $sugars,
         bool $extraHot
-    )
-    {
+    ) {
         $this->drinkType = $drinkType;
-        $this->money = $money;
-        $this->sugars = $sugars;
-        $this->extraHot = $extraHot;
+        $this->money     = $money;
+        $this->sugars    = $sugars;
+        $this->extraHot  = $extraHot;
     }
 
     public function drinkType(): string

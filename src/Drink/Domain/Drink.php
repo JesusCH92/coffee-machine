@@ -22,9 +22,9 @@ final class Drink
     public function __construct(DrinkType $drinkType, Money $money, Sugar $sugar, ExtraHot $extraHot)
     {
         $this->drinkType = $drinkType;
-        $this->money = $money;
-        $this->sugar = $sugar;
-        $this->extraHot = $extraHot;
+        $this->money     = $money;
+        $this->sugar     = $sugar;
+        $this->extraHot  = $extraHot;
     }
 
     public function drinkType(): DrinkType

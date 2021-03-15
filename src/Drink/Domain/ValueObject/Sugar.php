@@ -24,7 +24,7 @@ final class Sugar
     private function guardIfAmountIsBetweenZeroAndTwo(int $amountSugar)
     {
         if ($amountSugar < 0 || $amountSugar > 2) {
-            throw new AmountSugarIsNotBetweenZeroAndTwo((string) $amountSugar);
+            throw new AmountSugarIsNotBetweenZeroAndTwo((string)$amountSugar);
         }
     }
 
