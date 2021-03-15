@@ -2,6 +2,7 @@
 
 namespace GetWith\CoffeeMachine\Console;
 
+use Exception;
 use GetWith\CoffeeMachine\Drink\ApplicationService\DTO\OrderDrinkRequest;
 use GetWith\CoffeeMachine\Drink\ApplicationService\OrderDrink;
 use Symfony\Component\Console\Command\Command;
@@ -51,18 +52,22 @@ class MakeDrinkCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $orderDrinkService = new OrderDrink();
+        try {
+            $orderDrinkService = new OrderDrink();
 
-        $orderMsg = $orderDrinkService(
-            new OrderDrinkRequest(
-                $input->getArgument('drink-type'),
-                $input->getArgument('money'),
-                $input->getArgument('sugars'),
-                $input->getOption('extra-hot')
-            )
-        );
+            $orderMsg = $orderDrinkService(
+                new OrderDrinkRequest(
+                    $input->getArgument('drink-type'),
+                    $input->getArgument('money'),
+                    $input->getArgument('sugars'),
+                    $input->getOption('extra-hot')
+                )
+            );
 
-        $output->writeln($orderMsg);
+            $output->writeln($orderMsg);
+        } catch (Exception $e) {
+            $output->writeln($e->getMessage());
+        }
 
         return 0;
     }
