@@ -15,9 +15,12 @@ class MakeDrinkCommand extends Command
 {
     protected static $defaultName = 'app:order-drink';
 
-    public function __construct()
+    private OrderDrink $orderDrink;
+
+    public function __construct(OrderDrink $orderDrink)
     {
         parent::__construct(MakeDrinkCommand::$defaultName);
+        $this->orderDrink = $orderDrink;
     }
 
 
@@ -53,9 +56,7 @@ class MakeDrinkCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         try {
-            $orderDrinkService = new OrderDrink();
-
-            $orderMsg = $orderDrinkService(
+            $orderMsg = ($this->orderDrink)(
                 new OrderDrinkRequest(
                     $input->getArgument('drink-type'),
                     $input->getArgument('money'),
