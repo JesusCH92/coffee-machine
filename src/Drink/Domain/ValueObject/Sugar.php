@@ -30,7 +30,7 @@ final class Sugar
 
     private function isAmountSugarGreaterThanZero(): bool
     {
-        return $this->amountSugar > 0 ? true : false;
+        return $this->amountSugar > 0;
     }
 
     public function stickMessage(): string
