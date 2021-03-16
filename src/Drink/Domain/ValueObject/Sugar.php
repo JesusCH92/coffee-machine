@@ -28,7 +28,7 @@ final class Sugar
         }
     }
 
-    private function amountSugarIsGreaterThanZero(): bool
+    private function isAmountSugarGreaterThanZero(): bool
     {
         return $this->amountSugar > 0 ? true : false;
     }
@@ -36,6 +36,6 @@ final class Sugar
     public function stickMessage(): string
     {
         $stickMsg = ' with ' . $this->amountSugar . ' sugars (stick included)';
-        return $this->amountSugarIsGreaterThanZero() ? $stickMsg : '';
+        return $this->isAmountSugarGreaterThanZero() ? $stickMsg : '';
     }
 }
