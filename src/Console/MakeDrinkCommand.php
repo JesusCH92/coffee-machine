@@ -65,7 +65,7 @@ class MakeDrinkCommand extends Command
                 )
             );
 
-            $output->writeln($orderMsg);
+            $output->writeln($orderMsg->orderMessage());
         } catch (Exception $e) {
             $output->writeln($e->getMessage());
         }
